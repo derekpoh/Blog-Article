@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import 'typeface-roboto';
 
 
@@ -16,19 +17,14 @@ const WhatIsMenopause = () => {
             maxWidth: '1100px'
         }}     
         >
-        <h2
-        style={{
-            color: '#7DC4BD'
-        }}        
-        >
-            ____
-        </h2>
         <p
         style={{
             fontSize: '40px',
             color: '#7DC4BD'
         }}
         >
+            ___
+            <br/>
             What is Menopause?
             </p>
         <p
@@ -124,6 +120,20 @@ const WhatIsMenopause = () => {
             Postmenopause
             </li>
         </ol>
+        <br/>
+        <br/>
+        <br/>
+        <div
+        style={{
+            display: 'flex',
+            justifyContent: 'flex-end',
+        }}>
+            <p>
+                <Link to={"/what-is-menopause/perimenopause"}>
+                Next: Perimenopause
+                </Link>
+                </p>
+        </div>
             </div>
             </div>
 
