@@ -155,15 +155,18 @@ const Menopause = () => {
             </div>
 
             <div>
-            <img 
-            src='https://cdn.shopify.com/s/files/1/2060/5733/files/PPM--dex-final_2e85f294-d427-4524-ab0e-98fcfef514bf.jpg?v=1686204405'
-            style={{
-                width: isMobile ? '350px' : smallScreen ? "740px" : "1100px",
-                height: 'auto',
-                paddingTop: '50px',
-                paddingBottom: '10px',  
-            }} />
-            </div>
+            <a href="https://betterbody.co/pages/pp-provitalize-m" target="_blank" rel="noopener noreferrer">
+              <img
+                src="https://cdn.shopify.com/s/files/1/2060/5733/files/PPM--dex-final_2e85f294-d427-4524-ab0e-98fcfef514bf.jpg?v=1686204405"
+                style={{
+                  width: isMobile ? '350px' : smallScreen ? "740px" : "1100px",
+                  height: 'auto',
+                  paddingTop: '50px',
+                  paddingBottom: '10px',
+                }}
+              />
+            </a>
+          </div>
 
             </div>
 
