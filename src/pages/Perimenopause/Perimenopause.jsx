@@ -136,7 +136,7 @@ const Perimenopause = () => {
         }}>
             <p>
                 <Link to={"/what-is-menopause"}>
-                Previous: What is Perimenopause?
+                Previous: What is Menopause?
                 </Link>
                 </p>
             <p>
