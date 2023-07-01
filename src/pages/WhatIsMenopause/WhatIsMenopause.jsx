@@ -111,13 +111,19 @@ const WhatIsMenopause = () => {
         }} 
         >
         <li>
+            <Link to={"/what-is-menopause/perimenopause"}>
             Perimenopause or Premenopause
+            </Link>
             </li>
         <li>
+            <Link to={"/what-is-menopause/menopause"}>
             Menopause
+            </Link>
             </li>
         <li>
+            <Link to={"/what-is-menopause/postmenopause"}>
             Postmenopause
+            </Link>
             </li>
         </ol>
         <br/>

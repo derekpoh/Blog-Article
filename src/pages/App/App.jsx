@@ -1,4 +1,5 @@
 import { Route, Routes } from "react-router-dom";
+import BottomPage from "../../components/BottomPage/BottomPage";
 import NavBar from "../../components/NavBar/NavBar"
 import PictureCarousel from "../Carousel/Carousel"
 import Menopause from "../Menopause/Menopause";
@@ -18,12 +19,15 @@ const App = () => {
     <main>
     <NavBar />
     <PictureCarousel />
+    
     <Routes>
     <Route path="/what-is-menopause" element={<WhatIsMenopause />}></Route>
     <Route path="/what-is-menopause/perimenopause" element={<Perimenopause />}></Route>
     <Route path="/what-is-menopause/menopause" element={<Menopause />}></Route>
     <Route path="/what-is-menopause/postmenopause" element={<Postmenopause />}></Route>
     </Routes>
+
+    <BottomPage />
     </main>
   )
 }
