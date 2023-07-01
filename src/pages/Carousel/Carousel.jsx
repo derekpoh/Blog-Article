@@ -22,6 +22,7 @@ const images = [
 const PictureCarousel = () => {
   const [activeStep, setActiveStep] = useState(0);
   const isMobile = useMediaQuery("(max-width:600px)"); 
+  const mobileLandscape = useMediaQuery("(max-width:1160px)");
 
   const handleNext = () => {
     setActiveStep((prevActiveStep) =>
@@ -36,7 +37,9 @@ const PictureCarousel = () => {
       timeout={20000}
       next={handleNext}
       activeStep={activeStep}
-      sx={{height: isMobile? "250px" : "800px", width:"100%"}}
+      sx={{
+        height: isMobile? "250px" : mobileLandscape ? "450px" : "800px", 
+        width:"100%"}}
       indicatorContainerProps={{ style: { display: "none" } }}
       className="homePageCarousel"
 

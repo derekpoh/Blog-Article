@@ -69,7 +69,10 @@ const isMobile = useMediaQuery("(max-width:600px)");
                         paddingTop: isMobile ? '15px' : "", 
                         }} />
                     <Typography 
-                    fontSize={18}
+                    style={{
+                        fontSize: '18px',
+                        color: '#525252'
+                      }}
                     >
                         (+65) 6543 9876
                         </Typography>
@@ -88,6 +91,7 @@ const isMobile = useMediaQuery("(max-width:600px)");
                     <Typography
                     style={{
                         fontSize: '18px',
+                        color: '#525252'
                       }}
                     >
                     Subscribe for more related <br/> news and information
@@ -112,7 +116,10 @@ const isMobile = useMediaQuery("(max-width:600px)");
                 paddingTop: isMobile ? '15px' : "", 
                 }} />
             <Typography
-                fontSize={18}
+                style={{
+                    fontSize: '18px',
+                    color: '#525252'
+                  }}
                 >
                 Email Us
             </Typography>
@@ -129,7 +136,10 @@ const isMobile = useMediaQuery("(max-width:600px)");
                         paddingTop: '15px', 
                         }} />
                     <Typography
-                    fontSize={18}
+                    style={{
+                        fontSize: '18px',
+                        color: '#525252'
+                      }}
                     >
                     Our Location
                 </Typography>
@@ -149,7 +159,10 @@ const isMobile = useMediaQuery("(max-width:600px)");
                 <YouTubeIcon sx={{ fontSize: 30, paddingLeft:'10px' }}/>
                 </div>
 
-                <div>
+                <div
+                style={{
+                    color: '#525252'
+                  }}>
                     <p>Privacy Notice</p>
                     <p>Terms of Use</p>
                     <p>Site Map</p>
@@ -160,7 +173,8 @@ const isMobile = useMediaQuery("(max-width:600px)");
         
             <div
             style={{
-                paddingTop: '10px'
+                paddingTop: '10px',
+                color: '#525252'
             }}>
                 <p>
                 © 2023 HEALTHYWOMEN, Inc. All Right Reserved | {isMobile ? <br/> : null} Privacy Policy
