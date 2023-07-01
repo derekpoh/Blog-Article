@@ -11,7 +11,7 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 
 const StyledToolbar = styled(Toolbar)(({ theme }) => ({
-  alignItems: 'flex-start',
+  alignItems: 'flex-startcen',
   paddingTop: theme.spacing(1),
   paddingBottom: theme.spacing(2),
   '@media all': {
@@ -47,7 +47,7 @@ const NavBar = () => {
             <MenuIcon 
               fontSize='large'
               style={{
-                marginTop: isMobile ? "30px" : "18px"
+                marginTop: "5px"
               }}
             />
           </IconButton>
@@ -81,7 +81,7 @@ const NavBar = () => {
               alt="Home Page"
               style={{
                 marginTop: "10px",
-                marginLeft: isMobile ? "5vw" : "23vw",
+                marginLeft: isMobile ? "5vw" : "25vw",
                 width: "70px",
                 height: "70px",
                 borderRadius: '50%',
@@ -114,46 +114,105 @@ const NavBar = () => {
 
           {tinyScreen ? null : 
           <>
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
+          <IconButton
+            edge="start"
+            color="inherit"
+            aria-label="menu"
             sx={{
               marginLeft: smallScreen ? "10vw" : "15vw",
               alignSelf: 'center',
-              flexGrow: 0.2, 
               display: { xs: 'none', sm: 'block' }, 
               fontSize: smallScreen ? "15px" : "20px",
             }}
           >
-            About
-          </Typography>
           <Typography
             variant="h6"
             noWrap
             component="div"
             sx={{
+              fontSize: smallScreen ? "15px" : "20px",
+            }}
+            >
+            About
+          </Typography>
+            </IconButton>
+
+          <IconButton
+            edge="start"
+            color="inherit"
+            aria-label="menu"
+            sx={{
+              marginLeft: "1vw",
               alignSelf: 'center',
-              flexGrow: 0.2, 
               display: { xs: 'none', sm: 'block' }, 
+              fontSize: smallScreen ? "15px" : "20px",
+            }}
+            onClick={handleMenuOpen} 
+          >
+          <Typography
+            variant="h6"
+            noWrap
+            component="div"
+            sx={{
               fontSize: smallScreen ? "15px" : "20px",
             }}
           >
             Menopause
-          </Typography>
+          </Typography>   
+          </IconButton>
+          <Menu
+            anchorEl={anchorEl}
+            open={Boolean(anchorEl)}
+            onClose={handleMenuClose}
+          >
+            <MenuItem onClick={handleMenuClose}>
+              <Typography variant="h6">About</Typography>
+            </MenuItem>
+            <MenuItem onClick={handleMenuClose}>
+              <Typography variant="h6">Menopause</Typography>
+            </MenuItem>
+            <MenuItem onClick={handleMenuClose}>
+              <Typography variant="h6">Blog</Typography>
+            </MenuItem>
+            <MenuItem onClick={handleMenuClose}>
+              <Typography variant="h6">Contact Us</Typography>
+            </MenuItem>
+          </Menu>
+
+          <IconButton
+            edge="start"
+            color="inherit"
+            aria-label="menu"
+            sx={{
+              marginLeft: "1vw",
+              alignSelf: 'center',
+              display: { xs: 'none', sm: 'block' }, 
+              fontSize: smallScreen ? "15px" : "20px",
+            }}
+            >
           <Typography
             variant="h6"
             noWrap
             component="div"
             sx={{
+              fontSize: smallScreen ? "15px" : "20px",
+            }}
+            >
+            Blog
+          </Typography>
+            </IconButton>
+
+            <IconButton
+            edge="start"
+            color="inherit"
+            aria-label="menu"
+            sx={{
+              marginLeft: "1vw",
               alignSelf: 'center',
-              flexGrow: 0.2, 
               display: { xs: 'none', sm: 'block' }, 
               fontSize: smallScreen ? "15px" : "20px",
             }}
-          >
-            Blog
-          </Typography>
+            >
           <Typography
             variant="h6"
             noWrap
@@ -164,9 +223,11 @@ const NavBar = () => {
               display: { xs: 'none', sm: 'block' }, 
               fontSize: smallScreen ? "15px" : "20px",
             }}
-          >
+            >
             Contact Us
           </Typography>
+          </IconButton>
+
           </>
           }
         </StyledToolbar>
