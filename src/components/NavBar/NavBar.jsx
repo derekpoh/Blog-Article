@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Link } from 'react-router-dom';
 import { useMediaQuery } from "@mui/material";
 import { styled } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
@@ -21,6 +22,7 @@ const StyledToolbar = styled(Toolbar)(({ theme }) => ({
 
 const NavBar = () => {
   const [anchorEl, setAnchorEl] = React.useState(null);
+  const [menopauseAnchorEl, setMenopauseAnchorEl] = React.useState(null);
   const isMobile = useMediaQuery("(max-width:600px)");
   const tinyScreen = useMediaQuery("(max-width:960px)");
   const smallScreen = useMediaQuery("(max-width:1260px)");
@@ -33,10 +35,21 @@ const NavBar = () => {
     setAnchorEl(null);
   };
 
+  const handleMenopauseMenuOpen = (event) => {
+    setMenopauseAnchorEl(event.currentTarget);
+  };
+
+  const handleMenopauseMenuClose = () => {
+    setMenopauseAnchorEl(null);
+  };
+
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static" style={{ background: "#FB6B90" }}>
         <StyledToolbar>
+
+          {!tinyScreen ? null :
+          <>
           <IconButton
             edge="start"
             color="inherit"
@@ -59,7 +72,10 @@ const NavBar = () => {
             <MenuItem onClick={handleMenuClose}>
               <Typography variant="h6">About</Typography>
             </MenuItem>
-            <MenuItem onClick={handleMenuClose}>
+            <MenuItem 
+              onMouseEnter={handleMenopauseMenuOpen}
+              onMouseLeave={handleMenopauseMenuClose}
+            >
               <Typography variant="h6">Menopause</Typography>
             </MenuItem>
             <MenuItem onClick={handleMenuClose}>
@@ -69,7 +85,8 @@ const NavBar = () => {
               <Typography variant="h6">Contact Us</Typography>
             </MenuItem>
           </Menu>
-              
+          </>
+          }
           <div
             style={{
               display: 'flex',
@@ -114,120 +131,145 @@ const NavBar = () => {
 
           {tinyScreen ? null : 
           <>
-          <IconButton
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            sx={{
-              marginLeft: smallScreen ? "10vw" : "15vw",
-              alignSelf: 'center',
-              display: { xs: 'none', sm: 'block' }, 
-              fontSize: smallScreen ? "15px" : "20px",
-            }}
-          >
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{
-              fontSize: smallScreen ? "15px" : "20px",
-            }}
+            <IconButton
+              edge="start"
+              color="inherit"
+              aria-label="menu"
+              sx={{
+                marginLeft: smallScreen ? "10vw" : "15vw",
+                alignSelf: 'center',
+                display: { xs: 'none', sm: 'block' }, 
+                fontSize: smallScreen ? "15px" : "20px",
+              }}
             >
-            About
-          </Typography>
-            </IconButton>
-
-          <IconButton
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            sx={{
-              marginLeft: "1vw",
-              alignSelf: 'center',
-              display: { xs: 'none', sm: 'block' }, 
-              fontSize: smallScreen ? "15px" : "20px",
-            }}
-            onClick={handleMenuOpen} 
-          >
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{
-              fontSize: smallScreen ? "15px" : "20px",
-            }}
-          >
-            Menopause
-          </Typography>   
-          </IconButton>
-          <Menu
-            anchorEl={anchorEl}
-            open={Boolean(anchorEl)}
-            onClose={handleMenuClose}
-          >
-            <MenuItem onClick={handleMenuClose}>
-              <Typography variant="h6">About</Typography>
-            </MenuItem>
-            <MenuItem onClick={handleMenuClose}>
-              <Typography variant="h6">Menopause</Typography>
-            </MenuItem>
-            <MenuItem onClick={handleMenuClose}>
-              <Typography variant="h6">Blog</Typography>
-            </MenuItem>
-            <MenuItem onClick={handleMenuClose}>
-              <Typography variant="h6">Contact Us</Typography>
-            </MenuItem>
-          </Menu>
-
-          <IconButton
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            sx={{
-              marginLeft: "1vw",
-              alignSelf: 'center',
-              display: { xs: 'none', sm: 'block' }, 
-              fontSize: smallScreen ? "15px" : "20px",
-            }}
-            >
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{
-              fontSize: smallScreen ? "15px" : "20px",
-            }}
-            >
-            Blog
-          </Typography>
+              <Typography
+                variant="h6"
+                noWrap
+                component="div"
+                sx={{
+                  fontSize: smallScreen ? "15px" : "20px",
+                }}
+              >
+                About
+              </Typography>
             </IconButton>
 
             <IconButton
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            sx={{
-              marginLeft: "1vw",
-              alignSelf: 'center',
-              display: { xs: 'none', sm: 'block' }, 
-              fontSize: smallScreen ? "15px" : "20px",
-            }}
+              edge="start"
+              color="inherit"
+              aria-label="menu"
+              sx={{
+                marginLeft: "1vw",
+                alignSelf: 'center',
+                display: { xs: 'none', sm: 'block' }, 
+                fontSize: smallScreen ? "15px" : "20px",
+              }}
+              onMouseEnter={handleMenopauseMenuOpen}
+              onMouseLeave={handleMenopauseMenuClose}
             >
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{
-              alignSelf: 'center',
-              flexGrow: 1, 
-              display: { xs: 'none', sm: 'block' }, 
-              fontSize: smallScreen ? "15px" : "20px",
-            }}
-            >
-            Contact Us
-          </Typography>
-          </IconButton>
+              <Typography
+                variant="h6"
+                noWrap
+                component="div"
+                sx={{
+                  fontSize: smallScreen ? "15px" : "20px",
+                }}
+              >
+                Menopause
+              </Typography>   
+              <Menu
+                anchorEl={menopauseAnchorEl}
+                open={Boolean(menopauseAnchorEl)}
+                onClose={handleMenopauseMenuClose}
+                MenuListProps={{ onMouseLeave: handleMenopauseMenuClose }}
+              >
+                <MenuItem onClick={handleMenuClose}>
+                  <Typography variant="h6">
+                    <Link 
+                    to={"/what-is-menopause"}
+                    style={{textDecoration:'none'}}>
+                    What is Menopause?
+                    </Link>
+                    </Typography>
+                </MenuItem>
+                <MenuItem onClick={handleMenuClose}>
+                  <Typography variant="h6">
+                  <Link 
+                  to={"/what-is-menopause/perimenopause"} 
+                  style={{textDecoration:'none'}}>
+                    Perimenopause
+                    </Link>
+                    </Typography>
+                </MenuItem>
+                <MenuItem onClick={handleMenuClose}>
+                  <Typography variant="h6">
+                  <Link 
+                  to={"/what-is-menopause/menopause"}
+                  style={{textDecoration:'none'}}>
+                    Menopause
+                    </Link>
+                    </Typography>
+                </MenuItem>
+                <MenuItem onClick={handleMenuClose}>
+                  <Typography variant="h6">
+                  <Link 
+                  to={"/what-is-menopause/postmenopause"}
+                  style={{textDecoration:'none'}}>
+                    PostMenopause
+                    </Link>
+                    </Typography>
+                </MenuItem>
+              </Menu>
+            </IconButton>
 
+            <IconButton
+              edge="start"
+              color="inherit"
+              aria-label="menu"
+              sx={{
+                marginLeft: "1vw",
+                alignSelf: 'center',
+                display: { xs: 'none', sm: 'block' }, 
+                fontSize: smallScreen ? "15px" : "20px",
+              }}
+            >
+              <Typography
+                variant="h6"
+                noWrap
+                component="div"
+                sx={{
+                  fontSize: smallScreen ? "15px" : "20px",
+                }}
+              >
+                Blog
+              </Typography>
+            </IconButton>
+
+            <IconButton
+              edge="start"
+              color="inherit"
+              aria-label="menu"
+              sx={{
+                marginLeft: "1vw",
+                alignSelf: 'center',
+                display: { xs: 'none', sm: 'block' }, 
+                fontSize: smallScreen ? "15px" : "20px",
+              }}
+            >
+              <Typography
+                variant="h6"
+                noWrap
+                component="div"
+                sx={{
+                  alignSelf: 'center',
+                  flexGrow: 1, 
+                  display: { xs: 'none', sm: 'block' }, 
+                  fontSize: smallScreen ? "15px" : "20px",
+                }}
+              >
+                Contact Us
+              </Typography>
+            </IconButton>
           </>
           }
         </StyledToolbar>
@@ -237,4 +279,6 @@ const NavBar = () => {
 };
 
 export default NavBar;
+
+
 

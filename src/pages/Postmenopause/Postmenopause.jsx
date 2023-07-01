@@ -1,8 +1,13 @@
 import { Link } from 'react-router-dom';
+import { useMediaQuery } from "@mui/material";
 
 const Postmenopause = () => {
+  const isMobile = useMediaQuery("(max-width:600px)");
+  const smallScreen = useMediaQuery("(max-width:1260px)");
+
     return (
-<div 
+        <>
+        <div 
         style={{
             display: 'flex',
             flexDirection: 'column',
@@ -183,14 +188,7 @@ const Postmenopause = () => {
         >
             We at Better Body Co have a mission to help women around the world have an easier menopausal transition...
             </p>
-            <p
-        style={{
-            fontSize: '17px',
-            color: '#525252'
-        }}  
-        >
-            Solving Menopause Symptoms Is Easy As 1, 2, 3 with Provitalize
-            </p>
+           
         <br/>
         <br/>
         <br/>
@@ -206,7 +204,22 @@ const Postmenopause = () => {
                 </p>
         </div>
             </div>
+            
+            <div>
+            <img 
+            src='https://cdn.shopify.com/s/files/1/2060/5733/files/PPM--dex-final_2e85f294-d427-4524-ab0e-98fcfef514bf.jpg?v=1686204405'
+            style={{
+                width: isMobile ? '350px' : smallScreen ? "740px" : "1100px",
+                height: 'auto',
+                paddingTop: '50px',
+                paddingBottom: '10px',  
+            }} />
             </div>
+
+            </div>
+
+
+            </>
     )
 }
 
