@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useMediaQuery } from "@mui/material";
 import { styled } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -8,20 +9,29 @@ import LocalPhoneTwoToneIcon from '@mui/icons-material/LocalPhoneTwoTone';
 import EmailTwoToneIcon from '@mui/icons-material/EmailTwoTone';
 import NotificationsActiveTwoToneIcon from '@mui/icons-material/NotificationsActiveTwoTone';
 import LocationOnTwoToneIcon from '@mui/icons-material/LocationOnTwoTone';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import TwitterIcon from '@mui/icons-material/Twitter';
+import YouTubeIcon from '@mui/icons-material/YouTube';
+
 
 
 const StyledToolbar = styled(Toolbar)(({ theme }) => ({
-    alignItems: 'flex-start',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
     paddingTop: theme.spacing(1),
     paddingBottom: theme.spacing(2),
     '@media all': {
       minHeight: 300,
-      maxWidth: 1000,
+      maxWidth: 5000,
+      overflowX: 'hidden',
     },
   }));
 
 
 const BottomPage = () => {
+const isMobile = useMediaQuery("(max-width:600px)");
 
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -30,8 +40,16 @@ const BottomPage = () => {
             <div
             style={{
                 display:'flex',
+                alignItems: 'center',
+                flexDirection: 'column'
+            }}>
+
+            <div
+            style={{
+                display:'flex',
                 justifyContent:'space-between',
-                width: '400px'
+                width: '800px',
+                flexDirection: isMobile ? "column" : "",
             }}
             >
 
@@ -46,10 +64,13 @@ const BottomPage = () => {
                     display: 'flex', 
                     flexDirection:'column',  
                     alignItems: 'center' }}>
-                    <LocalPhoneTwoToneIcon sx={{ fontSize: 40 }} />
+                    <LocalPhoneTwoToneIcon 
+                    sx={{ fontSize: 40,
+                        paddingTop: isMobile ? '15px' : "", 
+                        }} />
                     <Typography 
-                    variant="h6" 
-                    noWrap>
+                    fontSize={18}
+                    >
                         (+65) 6543 9876
                         </Typography>
                         </div>
@@ -59,14 +80,16 @@ const BottomPage = () => {
                     display: 'flex', 
                     flexDirection:'column',  
                     alignItems: 'center' }}>
-                    <NotificationsActiveTwoToneIcon sx={{ fontSize: 40 }} />
+                    <NotificationsActiveTwoToneIcon 
+                    sx={{ 
+                        fontSize: 40, 
+                        paddingTop: '15px', 
+                        }} />
                     <Typography
-                    variant="h6"
-                    noWrap
-                    sx={{
-                        alignSelf: 'center',
-                    }}
-                >
+                    style={{
+                        fontSize: '18px',
+                      }}
+                    >
                     Subscribe for more related <br/> news and information
                 </Typography>
                 </div>
@@ -84,14 +107,13 @@ const BottomPage = () => {
                 display: 'flex', 
                 flexDirection:'column',  
                 alignItems: 'center' }}>
-                <EmailTwoToneIcon sx={{ fontSize: 40 }} />
+                <EmailTwoToneIcon 
+                sx={{ fontSize: 40, 
+                paddingTop: isMobile ? '15px' : "", 
+                }} />
             <Typography
-                variant="h6"
-                noWrap
-                sx={{
-                
-                }}
-            >
+                fontSize={18}
+                >
                 Email Us
             </Typography>
             </div>
@@ -101,21 +123,51 @@ const BottomPage = () => {
                     display: 'flex', 
                     flexDirection:'column',  
                     alignItems: 'center' }}>
-                    <LocationOnTwoToneIcon sx={{ fontSize: 40 }} />
+                    <LocationOnTwoToneIcon 
+                    sx={{ 
+                        fontSize: 40, 
+                        paddingTop: '15px', 
+                        }} />
                     <Typography
-                    variant="h6"
-                    noWrap
-                    sx={{
-                    
-                    }}
-                >
+                    fontSize={18}
+                    >
                     Our Location
                 </Typography>
                 </div>
                 </div>
-            
+                
+                <div
+                style={{ 
+                display: 'flex', 
+                flexDirection:'column',  
+                alignItems: 'center',
+                paddingTop: isMobile ? '15px' : "", }}>
+                <div>
+                <InstagramIcon sx={{ fontSize: 30 }}/>
+                <FacebookIcon sx={{ fontSize: 30, paddingLeft:'10px' }}/>
+                <TwitterIcon sx={{ fontSize: 30, paddingLeft:'10px' }}/>
+                <YouTubeIcon sx={{ fontSize: 30, paddingLeft:'10px' }}/>
+                </div>
+
+                <div>
+                    <p>Privacy Notice</p>
+                    <p>Terms of Use</p>
+                    <p>Site Map</p>
+                </div>
+                </div>
+                
+            </div>
+        
+            <div
+            style={{
+                paddingTop: '10px'
+            }}>
+                <p>
+                © 2023 HEALTHYWOMEN, Inc. All Right Reserved | {isMobile ? <br/> : null} Privacy Policy
+                </p>
             </div>
 
+            </div>
         </StyledToolbar>
       </AppBar>
     </Box>
