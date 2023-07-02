@@ -105,7 +105,7 @@ const NavBar = () => {
               alt="Home Page"
               style={{
                 marginTop: "10px",
-                marginLeft: isMobile ? "5vw" : smallScreen ? "23vw" : intermediateScreen ? "21vw" : mediumScreen ? "23vw" : "25vw",
+                marginLeft: isMobile ? "5vw" : smallScreen ? "22vw" : intermediateScreen ? "20vw" : mediumScreen ? "23vw" : "25vw",
                 width: "70px",
                 height: "70px",
                 borderRadius: '50%',
