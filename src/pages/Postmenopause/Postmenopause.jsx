@@ -5,6 +5,13 @@ const Postmenopause = () => {
   const isMobile = useMediaQuery("(max-width:600px)");
   const smallScreen = useMediaQuery("(max-width:1260px)");
 
+  const scrollToTop = () => {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+};
+
     return (
         <>
         <div 
@@ -198,8 +205,8 @@ const Postmenopause = () => {
             justifyContent: 'space-between',
         }}>
             <p>
-                <Link to={"/what-is-menopause/menopause"}>
-                Previous: menopause
+                <Link to={"/what-is-menopause/menopause"} onClick={scrollToTop}>
+                Previous: {isMobile ? <br/> : null} menopause
                 </Link>
                 </p>
         </div>

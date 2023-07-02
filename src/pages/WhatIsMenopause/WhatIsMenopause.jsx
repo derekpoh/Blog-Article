@@ -1,8 +1,18 @@
 import { Link } from 'react-router-dom';
+import { useMediaQuery } from "@mui/material";
 import 'typeface-roboto';
 
 
 const WhatIsMenopause = () => {
+    const isMobile = useMediaQuery("(max-width:600px)");
+
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    };
+
     return (
         <div 
         style={{
@@ -111,17 +121,17 @@ const WhatIsMenopause = () => {
         }} 
         >
         <li>
-            <Link to={"/what-is-menopause/perimenopause"}>
+            <Link to={"/what-is-menopause/perimenopause"} onClick={scrollToTop}>
             Perimenopause or Premenopause
             </Link>
             </li>
         <li>
-            <Link to={"/what-is-menopause/menopause"}>
+            <Link to={"/what-is-menopause/menopause"} onClick={scrollToTop}>
             Menopause
             </Link>
             </li>
         <li>
-            <Link to={"/what-is-menopause/postmenopause"}>
+            <Link to={"/what-is-menopause/postmenopause"} onClick={scrollToTop}>
             Postmenopause
             </Link>
             </li>
@@ -135,8 +145,8 @@ const WhatIsMenopause = () => {
             justifyContent: 'flex-end',
         }}>
             <p>
-                <Link to={"/what-is-menopause/perimenopause"}>
-                Next: Perimenopause
+                <Link to={"/what-is-menopause/perimenopause"} onClick={scrollToTop}>
+                Next: {isMobile ? <br/> : null} Perimenopause
                 </Link>
                 </p>
         </div>

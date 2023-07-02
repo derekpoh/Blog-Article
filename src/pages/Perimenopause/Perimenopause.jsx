@@ -1,6 +1,15 @@
 import { Link } from 'react-router-dom';
+import { useMediaQuery } from "@mui/material";
 
 const Perimenopause = () => {
+    const isMobile = useMediaQuery("(max-width:600px)");
+
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    };
 
     return (
         <div 
@@ -135,13 +144,13 @@ const Perimenopause = () => {
             justifyContent: 'space-between',
         }}>
             <p>
-                <Link to={"/what-is-menopause"}>
-                Previous: What is Menopause?
+                <Link to={"/what-is-menopause"} onClick={scrollToTop}>
+                Previous: {isMobile ? <br/> : null} What is Menopause?
                 </Link>
                 </p>
             <p>
-                <Link to={"/what-is-menopause/menopause"}>
-                Next: Menopause
+                <Link to={"/what-is-menopause/menopause"} onClick={scrollToTop}>
+                Next: {isMobile ? <br/> : null} Menopause
                 </Link>
                 </p>
         </div>
