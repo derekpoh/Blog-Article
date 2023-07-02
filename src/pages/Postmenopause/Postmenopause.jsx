@@ -208,6 +208,7 @@ const Postmenopause = () => {
             <a href="https://betterbody.co/pages/pp-provitalize-m" target="_blank" rel="noopener noreferrer">
               <img
                 src="https://cdn.shopify.com/s/files/1/2060/5733/files/PPM--dex-final_2e85f294-d427-4524-ab0e-98fcfef514bf.jpg?v=1686204405"
+                alt="Solving Menopause Symptoms Is Easy As 1,2,3 with Provitalize"
                 style={{
                   width: isMobile ? '350px' : smallScreen ? "740px" : "1100px",
                   height: 'auto',
