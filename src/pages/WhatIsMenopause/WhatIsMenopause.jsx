@@ -24,7 +24,7 @@ const WhatIsMenopause = () => {
         <div
         style={{
             textAlign: 'left',
-            maxWidth: '1100px'
+            maxWidth: isMobile ? '600px' : '1100px'
         }}     
         >
         <p
