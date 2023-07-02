@@ -102,7 +102,7 @@ const NavBar = () => {
           >
             <img
               src="/logo.JPG"
-              alt="Home Page"
+              alt="Menopause Blog"
               style={{
                 marginTop: "10px",
                 marginLeft: isMobile ? "5vw" : smallScreen ? "22vw" : intermediateScreen ? "20vw" : mediumScreen ? "23vw" : "25vw",
