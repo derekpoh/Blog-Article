@@ -1,1 +1,1 @@
-Link: menopause-blog-gamma.vercel.app
+Link: https://menopause-blog-gamma.vercel.app/
