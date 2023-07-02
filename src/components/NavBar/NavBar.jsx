@@ -12,7 +12,7 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 
 const StyledToolbar = styled(Toolbar)(({ theme }) => ({
-  alignItems: 'flex-startcen',
+  alignItems: 'flex-start center',
   paddingTop: theme.spacing(1),
   paddingBottom: theme.spacing(2),
   '@media all': {
@@ -25,7 +25,9 @@ const NavBar = () => {
   const [menopauseAnchorEl, setMenopauseAnchorEl] = React.useState(null);
   const isMobile = useMediaQuery("(max-width:600px)");
   const tinyScreen = useMediaQuery("(max-width:960px)");
-  const smallScreen = useMediaQuery("(max-width:1260px)");
+  const smallScreen = useMediaQuery("(max-width:1360px)");
+  const intermediateScreen = useMediaQuery("(max-width:1700px)");
+  const mediumScreen = useMediaQuery("(max-width:1960px)");
 
   const handleMenuOpen = (event) => {
     setAnchorEl(event.currentTarget);
@@ -95,6 +97,7 @@ const NavBar = () => {
             style={{
               display: 'flex',
               alignItems: 'center',
+              justifyContent: 'center',
             }}
           >
             <img
@@ -102,7 +105,7 @@ const NavBar = () => {
               alt="Home Page"
               style={{
                 marginTop: "10px",
-                marginLeft: isMobile ? "5vw" : "25vw",
+                marginLeft: isMobile ? "5vw" : smallScreen ? "23vw" : intermediateScreen ? "21vw" : mediumScreen ? "23vw" : "25vw",
                 width: "70px",
                 height: "70px",
                 borderRadius: '50%',
@@ -131,7 +134,7 @@ const NavBar = () => {
               HEALTHYWOMEN <br/>
               WOMEN'S HEALTH BLOG 
             </p>
-          </div>
+          
 
           {tinyScreen ? null : 
           <>
@@ -140,10 +143,10 @@ const NavBar = () => {
               color="inherit"
               aria-label="menu"
               sx={{
-                marginLeft: smallScreen ? "10vw" : "15vw",
+                marginLeft: smallScreen ? "5vw" : "15vw",
                 alignSelf: 'center',
                 display: { xs: 'none', sm: 'block' }, 
-                fontSize: smallScreen ? "15px" : "20px",
+                fontSize: smallScreen ? "16px" : "20px",
               }}
             >
               <Typography
@@ -151,7 +154,7 @@ const NavBar = () => {
                 noWrap
                 component="div"
                 sx={{
-                  fontSize: smallScreen ? "15px" : "20px",
+                  fontSize: smallScreen ? "16px" : "20px",
                 }}
               >
                 About
@@ -166,7 +169,7 @@ const NavBar = () => {
                 marginLeft: "1vw",
                 alignSelf: 'center',
                 display: { xs: 'none', sm: 'block' }, 
-                fontSize: smallScreen ? "15px" : "20px",
+                fontSize: smallScreen ? "16px" : "20px",
               }}
               onMouseEnter={handleMenopauseMenuOpen}
               onMouseLeave={handleMenopauseMenuClose}
@@ -176,7 +179,7 @@ const NavBar = () => {
                 noWrap
                 component="div"
                 sx={{
-                  fontSize: smallScreen ? "15px" : "20px",
+                  fontSize: smallScreen ? "16px" : "20px",
                 }}
               >
                 Menopause
@@ -234,7 +237,7 @@ const NavBar = () => {
                 marginLeft: "1vw",
                 alignSelf: 'center',
                 display: { xs: 'none', sm: 'block' }, 
-                fontSize: smallScreen ? "15px" : "20px",
+                fontSize: smallScreen ? "16px" : "20px",
               }}
             >
               <Typography
@@ -242,7 +245,7 @@ const NavBar = () => {
                 noWrap
                 component="div"
                 sx={{
-                  fontSize: smallScreen ? "15px" : "20px",
+                  fontSize: smallScreen ? "16px" : "20px",
                 }}
               >
                 Blog
@@ -257,7 +260,7 @@ const NavBar = () => {
                 marginLeft: "1vw",
                 alignSelf: 'center',
                 display: { xs: 'none', sm: 'block' }, 
-                fontSize: smallScreen ? "15px" : "20px",
+                fontSize: smallScreen ? "16px" : "20px",
               }}
             >
               <Typography
@@ -268,7 +271,7 @@ const NavBar = () => {
                   alignSelf: 'center',
                   flexGrow: 1, 
                   display: { xs: 'none', sm: 'block' }, 
-                  fontSize: smallScreen ? "15px" : "20px",
+                  fontSize: smallScreen ? "16px" : "20px",
                 }}
               >
                 Contact Us
@@ -276,6 +279,7 @@ const NavBar = () => {
             </IconButton>
           </>
           }
+          </div>
         </StyledToolbar>
       </AppBar>
     </Box>
