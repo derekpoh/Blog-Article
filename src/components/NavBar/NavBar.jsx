@@ -76,7 +76,11 @@ const NavBar = () => {
               onMouseEnter={handleMenopauseMenuOpen}
               onMouseLeave={handleMenopauseMenuClose}
             >
-              <Typography variant="h6">Menopause</Typography>
+              <Typography variant="h6">
+              <Link to={"/what-is-menopause"} style={{textDecoration:'none'}}>
+                Menopause
+                </Link>
+                </Typography>
             </MenuItem>
             <MenuItem onClick={handleMenuClose}>
               <Typography variant="h6">Blog</Typography>
