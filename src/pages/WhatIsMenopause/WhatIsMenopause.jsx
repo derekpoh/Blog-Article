@@ -140,6 +140,43 @@ const WhatIsMenopause = () => {
                 </Link>
                 </p>
         </div>
+        <br/>
+        <br/>
+        <br/>
+        <p
+        style={{
+            fontSize: '17px',
+            color: '#525252'
+        }}  
+        >
+            References
+            </p>
+        <ol
+        style={{
+            fontSize: '16px',
+            color: '#525252'
+        }} 
+        >
+        <li>
+            Caffeine and menopausal symptoms: what is the association? <br/>
+            <a href="https://www.ncbi.nlm.nih.gov/pubmed/25051286" target="_blank" rel="noopener noreferrer">
+            (https://www.ncbi.nlm.nih.gov/pubmed/25051286)
+            </a>
+            </li>
+        <li>
+            Cigarette Smoking, Androgen Levels, and Hot Flushes in Midlife Women <br/>
+            <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2673540/" target="_blank" rel="noopener noreferrer">
+            (https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2673540/)
+            </a>
+            </li>
+        <li>
+            Risk factors for menopausal hot flashes. <br/>
+            <a href="https://www.ncbi.nlm.nih.gov/pubmed/8008318" target="_blank" rel="noopener noreferrer">
+            (https://www.ncbi.nlm.nih.gov/pubmed/8008318)
+            </a>
+            </li>
+        </ol>
+        
             </div>
             </div>
 

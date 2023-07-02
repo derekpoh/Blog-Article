@@ -152,7 +152,6 @@ const Menopause = () => {
                 </Link>
                 </p>
         </div>
-            </div>
 
             <div>
             <a href="https://betterbody.co/pages/pp-provitalize-m" target="_blank" rel="noopener noreferrer">
@@ -168,6 +167,29 @@ const Menopause = () => {
             </a>
           </div>
 
+          <p
+        style={{
+            fontSize: '17px',
+            color: '#525252'
+        }}  
+        >
+            Disclamier
+            </p>
+          <p
+        style={{
+            fontSize: isMobile ? '12px' : '15px',
+            color: '#525252'
+        }}  
+        >
+        *THESE STATEMENTS HAVE NOT BEEN EVALUATED BY THE FOOD AND DRUG ADMINISTRATION. THIS
+        PRODUCT IS NOT INTENDED TO DIAGNOSE, TREAT, CURE OR PREVENT ANY DISEASE.
+        USERS' REVIEWS REFLECT THE OPINIONS OF THE INDIVIDUAL USER, NOT THE COMPANY.
+        INDIVIDUALS' EXPERIENCES MAY VARY. USERS' COMMENTS ABOUT THE BENEFITS ATTRIBUTE TO
+        BETTER BODY CO'S PRODUCTS AND DO NOT NECESSARILY REFLECT THE VIEWS OF THE COMPANY.
+        THE RESULTS MAY VARY FROM PERSON TO PERSON.
+            </p>
+
+            </div>
             </div>
 
             </>
