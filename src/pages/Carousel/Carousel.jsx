@@ -6,15 +6,15 @@ import { useMediaQuery } from "@mui/material";
 const images = [
   {
     src: "https://wellfemme.com.au/wp-content/uploads/2023/05/needs-help.jpg",
-    alt: "Image 1",
+    alt: "Night sweats, hot flashes and anxiety/depression are some of the many symptoms",
   },
   {
     src: "https://wellfemme.com.au/wp-content/uploads/2023/02/iStock-1425587176-1024x628.jpg",
-    alt: "Image 2",
+    alt: "Migraines during perimenopause and menopause",
   },
   {
     src: "https://wellfemme.com.au/wp-content/uploads/2021/03/iStock-1183376139-1024x576.jpg",
-    alt: "Image 3",
+    alt: "Common menopause signs and symptoms",
   },
 ];
 
